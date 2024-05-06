@@ -1,21 +1,21 @@
 import random
 
-number = random.randint(1, 10)
+nombre_secret = random.randint(1, 10)
 
 
 end_game = False
 while not end_game:
-    guess = int(input("What number do you think, I chose ? "))
-    if guess < number:
-        print("Too low.")
-    elif guess > number:
-        print("Too big.")
+    choix = int(input("Quel nombre penses-tu que j'ai ? "))
+    if choix < nombre_secret:
+        print("Trop bas")
+    elif choix > nombre_secret:
+        print("Trop grand.")
     else:
-        print("You won!")
-        cya = input("Do you want to play again ? If yes, type 'again' or 'quit' to exit ").lower()
-        if cya == "again":
-            number = random.randint(1, 10)
-            print("Let's play again")
+        print("Tu as gagné!")
+        ciao = input("Tu veux encore joué ? Si oui, tape 'encore' ou 'quitter' pour sortir ").lower()
+        if ciao == "encore":
+            nombre_secret = random.randint(1, 10)
+            print("C'est reparti!")
         else:
-            print("bye")
+            print("Aurevoir!")
             end_game = True
