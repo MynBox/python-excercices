@@ -16,25 +16,24 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 characters = ''
 digits = ''
 alpha = ''
-for n in letters:
+for i in range(nr_letters):
     randomized_number = random.randint(0, len(letters)-1)
     characters += letters[randomized_number]
-    if len(characters)==nr_letters:
+
         
-        for n in numbers:
-            randomized_number = random.randint(0, len(numbers)-1)
-            digits += numbers[randomized_number]
-            if len(digits)==nr_numbers:
+for i in range(nr_numbers):
+    randomized_number = random.randint(0, len(numbers)-1)
+    digits += numbers[randomized_number]
+        
                 
-                for n in symbols:
-                    randomized_number = random.randint(0, len(symbols)-1)
-                    alpha += symbols[randomized_number]
-                    if len(alpha)==nr_symbols:
+for i in range(nr_symbols):
+    randomized_number = random.randint(0, len(symbols)-1)
+    alpha += symbols[randomized_number]
+                    
                         
-                        print(characters+digits+alpha)
+passwd = characters+digits+alpha
 
-
-
+print(passwd)
 
 
 
@@ -42,3 +41,8 @@ for n in letters:
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+
+mixed_passwd = list(passwd)
+random.shuffle(mixed_passwd)
+print("".join(mixed_passwd))
+
